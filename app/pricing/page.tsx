@@ -98,7 +98,7 @@ export default function PricingPage() {
 function PageHero() {
   return (
     <section className="relative w-full h-[50vh]">
-      <Image src="/placeholder.svg?height=500&width=1600" alt="Elegant interior" fill className="object-cover" />
+      <Image src="/images/pricing/banner.jpg" alt="Elegant interior" fill className="object-cover" />
       <div className="absolute inset-0 bg-black/40" />
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
         <h1 className="text-5xl md:text-6xl font-bold">Pricing</h1>

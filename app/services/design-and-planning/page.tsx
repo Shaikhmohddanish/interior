@@ -75,7 +75,7 @@ export default function PageDesignPlanning() {
 function PageHero({ title, breadcrumb }: { title: string; breadcrumb: string }) {
   return (
     <section className="relative w-full h-[40vh] rounded-2xl overflow-hidden">
-      <Image src="/placeholder.svg?height=400&width=1200" alt={title} fill className="object-cover" />
+      <Image src="/images/services/design-planning/banner.jpg" alt={title} fill className="object-cover" />
       <div className="absolute inset-0 bg-black/40" />
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
         <h1 className="text-4xl md:text-5xl font-bold">{title}</h1>
@@ -117,7 +117,7 @@ function MainContent() {
       </div>
       <div>
         <Image
-          src="/placeholder.svg?height=400&width=500"
+          src="/images/services/design-planning/feature.jpg"
           alt="Interior design moodboard"
           width={500}
           height={400}

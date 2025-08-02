@@ -13,7 +13,7 @@ import { DesignVisualizationSection } from "@/components/design-visualization-se
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#F8F5F2] text-gray-800 font-sans">
+    <div className="flex flex-col min-h-screen bg-[#F8F5F2]">
       <Header />
       <main className="flex-1">
         <HeroSection />
@@ -104,14 +104,14 @@ function AboutIntroSection() {
           </div>
           <div className="relative h-[500px] flex items-center justify-center">
             <Image
-              src="/placeholder.svg?height=400&width=300"
+              src="/images/home/featured-1.jpg"
               alt="Designer with client"
               width={300}
               height={400}
               className="rounded-lg shadow-xl z-10 -mr-24"
             />
             <Image
-              src="/placeholder.svg?height=350&width=250"
+              src="/images/home/featured-2.jpg"
               alt="Happy client"
               width={250}
               height={350}
@@ -178,12 +178,31 @@ function ServicesOverview() {
 
 function ProjectGallery() {
   const projects = {
-    "Living Room": Array(3).fill({ src: "/placeholder.svg?height=400&width=400", alt: "Living Room" }),
-    Bedroom: Array(3).fill({ src: "/placeholder.svg?height=400&width=400", alt: "Bedroom" }),
-    Kitchen: Array(3).fill({ src: "/placeholder.svg?height=400&width=400", alt: "Kitchen" }),
-    Bathroom: Array(3).fill({ src: "/placeholder.svg?height=400&width=400", alt: "Bathroom" }),
-    "Commercial Space": Array(3).fill({ src: "/placeholder.svg?height=400&width=400", alt: "Commercial Space" }),
-    "Virtual Tour": Array(3).fill({ src: "/placeholder.svg?height=400&width=400", alt: "Virtual Tour" }),
+    "Living Room": [
+      { src: "/images/living-room/modern-living-room.jpg", alt: "Modern Living Room" },
+      { src: "/images/living-room/cozy-living-area.jpg", alt: "Cozy Living Area" },
+      { src: "/images/living-room/spacious-living-room.jpg", alt: "Spacious Living Room" }
+    ],
+    Bedroom: [
+      { src: "/images/bedroom/serene-bedroom.jpg", alt: "Serene Bedroom" },
+      { src: "/images/bedroom/master-bedroom-suite.jpg", alt: "Master Bedroom Suite" },
+      { src: "/images/bedroom/guest-bedroom.jpg", alt: "Guest Bedroom" }
+    ],
+    Kitchen: [
+      { src: "/images/kitchen/modern-kitchen.jpg", alt: "Modern Kitchen" },
+      { src: "/images/kitchen/gourmet-kitchen.jpg", alt: "Gourmet Kitchen" },
+      { src: "/images/kitchen/open-plan-kitchen.jpg", alt: "Open-plan Kitchen" }
+    ],
+    Bathroom: [
+      { src: "/images/bathroom/luxury-bathroom.jpg", alt: "Luxury Bathroom" },
+      { src: "/images/bathroom/spa-like-bathroom.jpg", alt: "Spa-like Bathroom" },
+      { src: "/images/bathroom/luxury-bathroom.jpg", alt: "Modern Bathroom" }
+    ],
+    "Commercial Space": [
+      { src: "/images/commercial/corporate-office.jpg", alt: "Corporate Office" },
+      { src: "/images/commercial/retail-space.jpg", alt: "Retail Space" },
+      { src: "/images/commercial/corporate-office.jpg", alt: "Office Space" }
+    ]
   }
   return (
     <section className="py-16 md:py-24 bg-white">

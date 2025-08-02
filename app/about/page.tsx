@@ -9,7 +9,7 @@ import { DesignVisualizationSection } from "@/components/design-visualization-se
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#F8F5F2] text-gray-800 font-sans">
+    <div className="flex flex-col min-h-screen bg-[#F8F5F2]">
       <Header />
       <main className="flex-1">
         <PageHero />
