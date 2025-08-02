@@ -117,7 +117,7 @@ function ProjectGallery() {
                   .map((project, index) => (
                     <div key={index} className="overflow-hidden rounded-lg group break-inside-avoid">
                       <Image
-                        src={`${project.src}&q=${category}${index}`}
+                        src={project.src}
                         alt={project.alt}
                         width={400}
                         height={500}
