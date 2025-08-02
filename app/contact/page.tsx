@@ -73,8 +73,8 @@ export default function ContactPage() {
                 </p>
                 <div className="w-full h-64 relative rounded-2xl overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=300&width=500"
-                    alt="Interior design sketch"
+                    src="/images/contact/contact-image.jpg"
+                    alt="Interior design consultation"
                     fill
                     className="object-cover"
                   />
@@ -134,7 +134,7 @@ export default function ContactPage() {
 function PageHero() {
   return (
     <section className="relative w-full h-[50vh]">
-      <Image src="/placeholder.svg?height=500&width=1600" alt="Contact us background" fill className="object-cover" />
+      <Image src="/images/contact/banner.jpg" alt="Contact us background" fill className="object-cover" />
       <div className="absolute inset-0 bg-black/40" />
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
         <h1 className="text-5xl md:text-6xl font-bold">Contact Us</h1>

@@ -31,17 +31,14 @@ export function Header() {
     {
       title: "2D/3D Layouts",
       href: "/services/2d-3d-layouts",
-      description: "Detailed floor plans and immersive 3D models to visualize your space.",
     },
     {
       title: "Turnkey Projects",
       href: "/services/turnkey-projects",
-      description: "A complete, end-to-end solution from design concept to final execution.",
     },
     {
       title: "Design & Planning",
       href: "/services/design-and-planning",
-      description: "Expert planning and creative design to bring your unique vision to life.",
     },
   ]
 
@@ -99,10 +96,10 @@ export function Header() {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Services</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                <ul className="grid w-[250px] gap-3 p-4">
                   {serviceLinks.map((component) => (
                     <ListItem key={component.title} title={component.title} href={component.href}>
-                      {component.description}
+                      {component.title}
                     </ListItem>
                   ))}
                 </ul>
@@ -191,17 +188,16 @@ const ListItem = ({
   children,
   href,
   ...props
-}: { className?: string; title: string; children: React.ReactNode; href: string }) => {
+}: { className?: string; title: string; children?: React.ReactNode; href: string }) => {
   return (
     <li>
       <NavigationMenuLink asChild>
         <Link
           href={href}
-          className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground ${className}`}
+          className={`block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground ${className}`}
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
         </Link>
       </NavigationMenuLink>
     </li>
