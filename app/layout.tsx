@@ -7,9 +7,14 @@ import "./globals.css"
 import { ThemeProvider } from "next-themes"
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
+  title: "SRK Interior Designer",
+  description: "Premium Interior Design Solutions",
   generator: "v0.dev",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 }
 
 export default function RootLayout({
