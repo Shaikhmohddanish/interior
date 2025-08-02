@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   description: "Premium Interior Design Solutions",
   generator: "v0.dev",
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
     apple: "/logo.png",
   },
 }

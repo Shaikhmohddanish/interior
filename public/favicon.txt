@@ -1,0 +1,13 @@
+To create a proper favicon:
+
+1. Create a square version of your logo (ideally 32x32, 64x64, or 128x128 pixels)
+2. Convert it to ICO format
+3. Name it "favicon.ico"
+4. Place it in the public folder
+
+You can use online tools like:
+- favicon.io
+- realfavicongenerator.net
+- faviconer.com
+
+For now, we're using the logo.png file as a temporary favicon.
