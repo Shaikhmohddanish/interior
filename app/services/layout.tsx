@@ -70,7 +70,7 @@ function ServicesSidebar() {
       </Card>
       <div className="relative bg-black text-white text-center rounded-2xl overflow-hidden">
         <Image
-          src="/placeholder.svg?height=400&width=300"
+          src="/images/services/sidebar-image.jpg"
           alt="Modern interior"
           fill
           className="object-cover opacity-40"

@@ -8,7 +8,7 @@ export function DesignVisualizationSection() {
         <div className="grid md:grid-cols-2 gap-0 items-center bg-white shadow-xl rounded-2xl overflow-hidden">
           <div className="p-4">
             <Image
-              src="/placeholder.svg?height=600&width=600"
+              src="/images/design/interior-sketch.jpg"
               alt="Interior sketch"
               width={600}
               height={600}
@@ -17,7 +17,7 @@ export function DesignVisualizationSection() {
           </div>
           <div className="p-4">
             <Image
-              src="/placeholder.svg?height=600&width=600"
+              src="/images/design/interior-render.jpg"
               alt="Interior render"
               width={600}
               height={600}

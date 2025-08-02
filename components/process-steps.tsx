@@ -40,7 +40,7 @@ export function ProcessSteps() {
           </div>
           <div>
             <Image
-              src="/placeholder.svg?height=600&width=500"
+              src="/images/process/interior-design-process.jpg"
               alt="Interior designer at a construction site"
               width={500}
               height={600}

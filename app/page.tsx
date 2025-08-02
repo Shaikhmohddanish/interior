@@ -42,7 +42,7 @@ function HeroSection() {
           <CarouselItem>
             <div className="relative w-full h-[85vh]">
               <Image
-                src="/placeholder.svg?height=900&width=1600"
+                src="/images/hero/modern-living-room.jpg"
                 alt="Modern living room"
                 fill
                 className="object-cover"
@@ -126,9 +126,9 @@ function AboutIntroSection() {
 
 function ServicesOverview() {
   const services = [
-    { name: "2D/3D Layouts", image: "/placeholder.svg?height=400&width=400" },
-    { name: "Turnkey Projects", image: "/placeholder.svg?height=400&width=400" },
-    { name: "Design & Planning", image: "/placeholder.svg?height=400&width=400" },
+    { name: "2D/3D Layouts", image: "/images/services/2d-3d-layouts.jpg" },
+    { name: "Turnkey Projects", image: "/images/services/turnkey-projects.jpg" },
+    { name: "Design & Planning", image: "/images/services/design-planning.jpg" },
   ]
   return (
     <section className="py-16 md:py-24 bg-[#3A506B] text-white">

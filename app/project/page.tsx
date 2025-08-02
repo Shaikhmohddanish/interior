@@ -13,30 +13,30 @@ import { ChevronRight, Plus } from "lucide-react"
 
 const allProjects = [
   // Living Room
-  { category: "Living Room", src: "/placeholder.svg?height=500&width=400", alt: "Modern Living Room" },
-  { category: "Living Room", src: "/placeholder.svg?height=400&width=400", alt: "Cozy Living Area" },
-  { category: "Living Room", src: "/placeholder.svg?height=400&width=500", alt: "Spacious Living Room" },
-  { category: "Living Room", src: "/placeholder.svg?height=300&width=400", alt: "Minimalist Living Room" },
-  { category: "Living Room", src: "/placeholder.svg?height=500&width=400", alt: "Luxury Living Room" },
-  { category: "Living Room", src: "/placeholder.svg?height=400&width=400", alt: "Contemporary Living Space" },
+  { category: "Living Room", src: "/images/living-room/modern-living-room.jpg", alt: "Modern Living Room" },
+  { category: "Living Room", src: "/images/living-room/cozy-living-area.jpg", alt: "Cozy Living Area" },
+  { category: "Living Room", src: "/images/living-room/spacious-living-room.jpg", alt: "Spacious Living Room" },
+  { category: "Living Room", src: "/images/living-room/minimalist-living-room.jpg", alt: "Minimalist Living Room" },
+  { category: "Living Room", src: "/images/living-room/luxury-living-room.jpg", alt: "Luxury Living Room" },
+  { category: "Living Room", src: "/images/living-room/contemporary-living-space.jpg", alt: "Contemporary Living Space" },
 
   // Bedroom
-  { category: "Bedroom", src: "/placeholder.svg?height=500&width=400", alt: "Serene Bedroom" },
-  { category: "Bedroom", src: "/placeholder.svg?height=400&width=500", alt: "Master Bedroom Suite" },
-  { category: "Bedroom", src: "/placeholder.svg?height=450&width=400", alt: "Guest Bedroom" },
+  { category: "Bedroom", src: "/images/bedroom/serene-bedroom.jpg", alt: "Serene Bedroom" },
+  { category: "Bedroom", src: "/images/bedroom/master-bedroom-suite.jpg", alt: "Master Bedroom Suite" },
+  { category: "Bedroom", src: "/images/bedroom/guest-bedroom.jpg", alt: "Guest Bedroom" },
 
   // Kitchen
-  { category: "Kitchen", src: "/placeholder.svg?height=400&width=400", alt: "Modern Kitchen" },
-  { category: "Kitchen", src: "/placeholder.svg?height=500&width=400", alt: "Gourmet Kitchen" },
-  { category: "Kitchen", src: "/placeholder.svg?height=400&width=500", alt: "Open-plan Kitchen" },
+  { category: "Kitchen", src: "/images/kitchen/modern-kitchen.jpg", alt: "Modern Kitchen" },
+  { category: "Kitchen", src: "/images/kitchen/gourmet-kitchen.jpg", alt: "Gourmet Kitchen" },
+  { category: "Kitchen", src: "/images/kitchen/open-plan-kitchen.jpg", alt: "Open-plan Kitchen" },
 
   // Bathroom
-  { category: "Bathroom", src: "/placeholder.svg?height=500&width=400", alt: "Luxury Bathroom" },
-  { category: "Bathroom", src: "/placeholder.svg?height=450&width=400", alt: "Spa-like Bathroom" },
+  { category: "Bathroom", src: "/images/bathroom/luxury-bathroom.jpg", alt: "Luxury Bathroom" },
+  { category: "Bathroom", src: "/images/bathroom/spa-like-bathroom.jpg", alt: "Spa-like Bathroom" },
 
   // Commercial
-  { category: "Commercial", src: "/placeholder.svg?height=400&width=500", alt: "Corporate Office" },
-  { category: "Commercial", src: "/placeholder.svg?height=500&width=400", alt: "Retail Space" },
+  { category: "Commercial", src: "/images/commercial/corporate-office.jpg", alt: "Corporate Office" },
+  { category: "Commercial", src: "/images/commercial/retail-space.jpg", alt: "Retail Space" },
 ]
 
 export default function ProjectPage() {
@@ -58,7 +58,7 @@ function PageHero() {
   return (
     <section className="relative w-full h-[50vh]">
       <Image
-        src="/placeholder.svg?height=500&width=1600"
+        src="/images/project/hero-banner.jpg"
         alt="Stylish interior project"
         fill
         className="object-cover"
