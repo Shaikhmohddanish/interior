@@ -1,0 +1,31 @@
+/* Add this to your existing CSS to prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Make elements respect container widths on mobile */
+img, video, svg, picture, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve spacing on small screens */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  /* Ensure text is readable on all devices */
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Improve contrast for light text */
+  .text-gray-500, .text-gray-400, .text-gray-300 {
+    color: #666;
+  }
+}

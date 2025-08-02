@@ -211,31 +211,40 @@ function ProjectGallery() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">OUR LATEST PROJECT</h2>
         </div>
         <Tabs defaultValue="Living Room" className="w-full">
-          <div className="flex justify-center">
-            <TabsList className="grid grid-cols-3 md:grid-cols-6 gap-2 bg-transparent p-0">
-              {Object.keys(projects).map((category) => (
-                <TabsTrigger
-                  key={category}
-                  value={category}
-                  className="rounded-full data-[state=active]:bg-[#3A506B] data-[state=active]:text-white"
-                >
-                  {category}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+          <div className="relative flex justify-center mb-4">
+            <div className="w-full overflow-x-auto pb-2 no-scrollbar -mx-2 px-2">
+              <TabsList className="inline-flex flex-nowrap w-max md:w-auto md:grid md:grid-cols-5 gap-3 bg-transparent p-1">
+                {Object.keys(projects).map((category) => (
+                  <TabsTrigger
+                    key={category}
+                    value={category}
+                    className="rounded-full whitespace-nowrap min-w-[110px] px-5 py-2.5 text-gray-700 font-medium border border-gray-200 shadow-sm data-[state=active]:bg-[#C0A080] data-[state=active]:text-white data-[state=active]:border-[#C0A080]"
+                  >
+                    {category}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
+            <div className="absolute left-0 top-0 bottom-0 w-4 bg-gradient-to-r from-white to-transparent pointer-events-none hidden sm:block"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-4 bg-gradient-to-l from-white to-transparent pointer-events-none hidden sm:block"></div>
           </div>
           {Object.entries(projects).map(([category, items]) => (
             <TabsContent key={category} value={category}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-6 sm:mt-8">
                 {items.map((project, index) => (
-                  <div key={index} className="overflow-hidden rounded-lg group">
+                  <div key={index} className="overflow-hidden rounded-lg group relative h-64 sm:h-80">
                     <Image
-                      src={`${project.src}&v=${index}`}
+                      src={project.src}
                       alt={project.alt}
-                      width={400}
-                      height={400}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
+                      <div className="p-4 text-white">
+                        <p className="font-medium">{project.alt}</p>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>

@@ -5,6 +5,7 @@ import { GeistMono } from "geist/font/mono"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import "./globals.css"
 import { ThemeProvider } from "next-themes"
+import { TextContrastEnhancer } from "@/components/text-contrast-enhancer"
 
 export const metadata: Metadata = {
   title: "SRK Interior Designer",
@@ -35,8 +36,10 @@ html {
       </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
-          <WhatsAppButton />
+          <TextContrastEnhancer>
+            {children}
+            <WhatsAppButton />
+          </TextContrastEnhancer>
         </ThemeProvider>
       </body>
     </html>
