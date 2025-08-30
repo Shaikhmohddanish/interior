@@ -140,7 +140,7 @@ function PageHero() {
         <h1 className="text-5xl md:text-6xl font-bold">Contact Us</h1>
         <div className="flex items-center gap-2 mt-4 text-lg">
           <Link href="/" className="hover:underline">
-            SRK Interiors
+            SRK Interior
           </Link>
           <ChevronRight className="h-5 w-5" />
           <span>Contact Us</span>
