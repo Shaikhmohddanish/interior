@@ -100,7 +100,7 @@ function FoundersSection() {
             <p className="text-sm uppercase tracking-widest text-gray-400">SINCE 2016</p>
             <h2 className="text-3xl md:text-4xl font-bold">Meet Our Founders</h2>
             <p className="text-gray-300">
-              SRK Interiors was founded by two experts with a shared vision. Id. Maviya Zahoor Rohe, a Master's graduate
+              SRK Interiors was founded by Sharukh Qureshi, a visionary with a passion for transforming spaces. Along with him, Id. Maviya Zahoor Rohe, a Master's graduate
               in Interior Design, brings creativity and innovation to every project, while Er. Mukarim Rizwan Khan, a
               Civil Engineer from Mumbai University, focuses on structure and durability. Together, they create spaces
               that are as practical as they are beautiful.

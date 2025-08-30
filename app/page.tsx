@@ -90,7 +90,7 @@ function AboutIntroSection() {
               Designing timeless interiors that inspire and elevate every space.
             </h2>
             <p className="text-gray-600">
-              At SRK Interiors, we create beautiful, functional spaces for homes, offices, and businesses. Our designs
+              At SRK Interiors, founded by Sharukh Qureshi, we create beautiful, functional spaces for homes, offices, and businesses. Our designs
               balance style and practicality, making every space both stunning and liveable.
             </p>
             <div className="grid grid-cols-2 gap-4 mt-4">
