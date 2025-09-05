@@ -1,176 +1,331 @@
-"use client"
-
-import { useActionState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { Header } from "@/components/header"
+import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
-import { Card, CardContent } from "@/components/ui/card"
-import { ChevronRight, ArrowUpRight, Sofa, DraftingCompass, Layers, Home } from "lucide-react"
-import { submitContactForm } from "./actions"
+import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from "lucide-react"
+import { Metadata } from "next"
 
-const serviceCards = [
-  {
-    icon: Sofa,
-    title: "Modern Living Area",
-    description: "Iterative methods of developing the corporate strategy.",
+export const metadata: Metadata = {
+  title: "Contact SRK Interior Designer - Get Free Consultation | +91 9819393613",
+  description: "Contact SRK Interior Designer for free consultation. Call +91 9819393613 or email info@srkinteriordesigner.com. Serving Mumbai, Pune, Bangalore. Get your interior design quote today.",
+  keywords: ["contact interior designer", "free consultation", "interior design quote", "Mumbai interior designer contact", "SRK interior designer phone", "interior design consultation"],
+  openGraph: {
+    title: "Contact SRK Interior Designer - Get Free Consultation",
+    description: "Contact us for free interior design consultation. Call +91 9819393613 or fill our contact form.",
+    images: ["/modern-office-interior-design-workspace.png"],
   },
-  {
-    icon: Home,
-    title: "Interior Design",
-    description: "We create the complete set of project information.",
-  },
-  {
-    icon: DraftingCompass,
-    title: "3D Design Layouts",
-    description: "Iterative methods of developing the corporate strategy.",
-  },
-  {
-    icon: Layers,
-    title: "Remodel Spaces",
-    description: "We create the complete set of project information.",
-  },
-]
-
-const interestOptions = [
-  "Living Room",
-  "Bedroom",
-  "Master Bedroom",
-  "Kitchen",
-  "Bathroom",
-  "Foyer Area & Safety Door",
-  "Commercial Space",
-]
-
-const initialState = {
-  message: "",
-  success: false,
 }
 
 export default function ContactPage() {
-  const [state, formAction, isPending] = useActionState(submitContactForm, initialState)
+  const contactInfo = [
+    {
+      icon: Phone,
+      title: "Phone Number",
+      details: "+91 9819393613",
+      description: "Call us for immediate assistance",
+    },
+    {
+      icon: Mail,
+      title: "Email Address",
+      details: "info@srkinteriordesigner.com",
+      description: "Send us your project details",
+    },
+    {
+      icon: MapPin,
+      title: "Service Areas",
+      details: "Mumbai, Pune, Bangalore & More",
+      description: "We serve major cities across India",
+    },
+    {
+      icon: Clock,
+      title: "Business Hours",
+      details: "Mon - Sat: 9:00 AM - 7:00 PM",
+      description: "Sunday by appointment only",
+    },
+  ]
+
+  const roomTypes = [
+    "Living Room",
+    "Bedroom",
+    "Master Bedroom",
+    "Kitchen",
+    "Bathroom",
+    "Foyer Area & Safety Door",
+    "Commercial Space",
+  ]
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#F8F5F2]">
-      <Header />
-      <main className="flex-1">
-        <PageHero />
-        <ServiceCardsSection />
-        <section className="py-16 md:py-24 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
-              <div className="space-y-6">
-                <p className="text-sm uppercase tracking-widest text-[#C0A080]">CONTACT US</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Have questions or need assistance?</h2>
-                <p className="text-gray-600">
-                  Whether you're ready to start your project, need expert advice, or simply want to explore ideas, our
-                  team is here to help. Let's make your vision a reality—reach out to us today!
-                </p>
-                <div className="w-full h-64 relative rounded-2xl overflow-hidden">
-                  <Image
-                    src="/images/contact/contact-image.jpg"
-                    alt="Interior design consultation"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
+    <main className="min-h-screen">
+      <Navigation />
 
-              <Card className="p-8 shadow-lg">
-                <form action={formAction} className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <Input name="name" placeholder="Name *" required />
-                    <Input name="mobile" placeholder="Mobile Number *" required />
-                    <Input name="email" type="email" placeholder="Email *" required />
-                    <Input name="city" placeholder="City *" required />
+      {/* Hero Section */}
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-muted/30 to-card/50">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance">Get In Touch</h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
+              Ready to transform your space? Contact us today for a free consultation and let's discuss how we can bring
+              your interior design vision to life.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Info Cards */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {contactInfo.map((info, index) => (
+              <Card key={index} className="text-center hover:shadow-md transition-shadow border-border/50">
+                <CardHeader className="pb-4">
+                  <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                    <info.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <Select name="package" required>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select Package *" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="standard">Standard Package</SelectItem>
-                      <SelectItem value="premium">Premium Package</SelectItem>
-                      <SelectItem value="ultra-premium">Ultra Premium Package</SelectItem>
-                      <SelectItem value="luxury">Luxury Package</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Select Interests</label>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                      {interestOptions.map((item) => (
-                        <div key={item} className="flex items-center gap-2">
-                          <Checkbox id={item.toLowerCase().replace(/ /g, "-")} name="interests" value={item} />
-                          <label htmlFor={item.toLowerCase().replace(/ /g, "-")} className="text-sm">
-                            {item}
-                          </label>
+                  <CardTitle className="text-lg">{info.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <div className="font-semibold text-primary mb-2">{info.details}</div>
+                  <CardDescription className="text-sm">{info.description}</CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form & Map */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div>
+              <Card className="border-border/50">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                      <MessageCircle className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-2xl">Send Us a Message</CardTitle>
+                      <CardDescription>
+                        Fill out the form below and we'll get back to you within 24 hours
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Name *</Label>
+                      <Input id="name" placeholder="Your full name" className="bg-background" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="mobile">Mobile Number *</Label>
+                      <Input id="mobile" placeholder="Your mobile number" className="bg-background" />
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email *</Label>
+                      <Input id="email" type="email" placeholder="Your email address" className="bg-background" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="city">City *</Label>
+                      <Input id="city" placeholder="Your city" className="bg-background" />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="package">Select Package *</Label>
+                    <Select>
+                      <SelectTrigger className="bg-background">
+                        <SelectValue placeholder="Choose a package" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="standard">Standard Package - ₹6,999</SelectItem>
+                        <SelectItem value="premium">Premium Package - ₹8,499</SelectItem>
+                        <SelectItem value="ultra-premium">Ultra Premium Package - ₹10,499</SelectItem>
+                        <SelectItem value="luxury">Luxury Package - ₹14,499</SelectItem>
+                        <SelectItem value="custom">Custom Quote Required</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-3">
+                    <Label>Select Interests</Label>
+                    <div className="grid grid-cols-2 gap-3">
+                      {roomTypes.map((room, index) => (
+                        <div key={index} className="flex items-center space-x-2">
+                          <Checkbox id={`room-${index}`} />
+                          <Label htmlFor={`room-${index}`} className="text-sm font-normal">
+                            {room}
+                          </Label>
                         </div>
                       ))}
                     </div>
                   </div>
-                  <Textarea name="message" placeholder="Your Message" rows={4} />
-                  <Button type="submit" disabled={isPending} className="w-full bg-[#C0A080] hover:bg-[#A98B70]">
-                    {isPending ? "Submitting..." : "Submit Form"}
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Your Message</Label>
+                    <Textarea
+                      id="message"
+                      placeholder="Tell us about your project requirements, timeline, and any specific preferences..."
+                      className="min-h-[120px] bg-background"
+                    />
+                  </div>
+
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-lg py-3">
+                    <Send className="w-5 h-5 mr-2" />
+                    Submit Form
                   </Button>
-                  {state?.message && (
-                    <p className={`text-sm ${state.success ? "text-green-600" : "text-red-600"}`}>{state.message}</p>
-                  )}
-                </form>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Map & Additional Info */}
+            <div className="space-y-8">
+              {/* Map Placeholder */}
+              <Card className="border-border/50">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3">
+                    <MapPin className="w-6 h-6 text-primary" />
+                    Our Service Areas
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="aspect-video bg-muted rounded-lg flex items-center justify-center mb-4">
+                    <div className="text-center">
+                      <MapPin className="w-12 h-12 text-primary mx-auto mb-2" />
+                      <p className="text-muted-foreground">Interactive Map</p>
+                      <p className="text-sm text-muted-foreground">Serving major cities across India</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <h4 className="font-semibold mb-2">Primary Cities</h4>
+                      <ul className="space-y-1 text-muted-foreground">
+                        <li>Mumbai</li>
+                        <li>Pune</li>
+                        <li>Bangalore</li>
+                        <li>Chennai</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-2">Extended Areas</h4>
+                      <ul className="space-y-1 text-muted-foreground">
+                        <li>Delhi NCR</li>
+                        <li>Hyderabad</li>
+                        <li>Goa</li>
+                        <li>Ahmedabad</li>
+                      </ul>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Quick Contact */}
+              <Card className="border-border/50">
+                <CardHeader>
+                  <CardTitle>Quick Contact</CardTitle>
+                  <CardDescription>Need immediate assistance? Reach out directly</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+                    <Phone className="w-5 h-5 text-primary" />
+                    <div>
+                      <div className="font-semibold">Call Now</div>
+                      <div className="text-sm text-muted-foreground">+91 9819393613</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+                    <Mail className="w-5 h-5 text-primary" />
+                    <div>
+                      <div className="font-semibold">Email Us</div>
+                      <div className="text-sm text-muted-foreground">info@srkinteriordesigner.com</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Response Time */}
+              <Card className="bg-primary text-primary-foreground border-primary">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Clock className="w-6 h-6" />
+                    <h3 className="font-semibold text-lg">Response Guarantee</h3>
+                  </div>
+                  <p className="text-sm opacity-90">
+                    We respond to all inquiries within 24 hours. For urgent projects, call us directly for immediate
+                    assistance.
+                  </p>
+                </CardContent>
               </Card>
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">What Happens Next?</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Here's what you can expect after reaching out to us for your interior design project.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Initial Contact",
+                description: "We'll respond within 24 hours to schedule your free consultation call.",
+                icon: Phone,
+              },
+              {
+                step: "02",
+                title: "Consultation Call",
+                description: "Detailed discussion about your requirements, budget, and timeline.",
+                icon: MessageCircle,
+              },
+              {
+                step: "03",
+                title: "Proposal & Quote",
+                description: "Customized proposal with detailed scope, timeline, and transparent pricing.",
+                icon: Send,
+              },
+              {
+                step: "04",
+                title: "Project Kickoff",
+                description: "Once approved, we begin the design process with site visit and measurements.",
+                icon: MapPin,
+              },
+            ].map((process, index) => (
+              <Card key={index} className="text-center border-border/50 hover:shadow-md transition-shadow">
+                <CardHeader>
+                  <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                    {process.step}
+                  </div>
+                  <process.icon className="w-8 h-8 text-primary mx-auto mb-4" />
+                  <CardTitle className="text-lg">{process.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-sm">{process.description}</CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
-    </div>
-  )
-}
-
-function PageHero() {
-  return (
-    <section className="relative w-full h-[50vh]">
-      <Image src="/images/contact/banner.jpg" alt="Contact us background" fill className="object-cover" />
-      <div className="absolute inset-0 bg-black/40" />
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
-        <h1 className="text-5xl md:text-6xl font-bold">Contact Us</h1>
-        <div className="flex items-center gap-2 mt-4 text-lg">
-          <Link href="/" className="hover:underline">
-            SRK Interior
-          </Link>
-          <ChevronRight className="h-5 w-5" />
-          <span>Contact Us</span>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function ServiceCardsSection() {
-  return (
-    <section className="py-16 md:py-24">
-      <div className="container mx-auto px-4">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {serviceCards.map((card) => (
-            <Card key={card.title} className="p-6 text-center group hover:shadow-xl transition-shadow">
-              <CardContent className="p-0 flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4">
-                  <card.icon className="w-8 h-8 text-[#C0A080]" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">{card.title}</h3>
-                <p className="text-gray-600 flex-1">{card.description}</p>
-                <div className="mt-4 w-8 h-8 rounded-full bg-gray-200 group-hover:bg-[#C0A080] flex items-center justify-center transition-colors">
-                  <ArrowUpRight className="w-4 h-4 text-gray-600 group-hover:text-white" />
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
+    </main>
   )
 }

@@ -1,36 +1,86 @@
 import Link from "next/link"
-import { Facebook, Instagram, Linkedin } from "lucide-react"
+import { Mail, Phone } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-[#F8F5F2]">
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex gap-6 text-gray-600">
-            <Link href="/faq" className="hover:text-black">
-              Faq
-            </Link>
-            <Link href="/services" className="hover:text-black">
-              Service
-            </Link>
-            <Link href="/terms" className="hover:text-black">
-              Term & Condition
-            </Link>
+    <footer className="bg-foreground text-background py-16">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div className="lg:col-span-2">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/srkinteriordesigner-2Ec7qSgV7aTKkKkexHGWxKH8PjDGwr.png"
+              alt="SRK Interior Designer"
+              className="h-8 w-auto mb-4 brightness-0 invert"
+            />
+            <p className="text-background/80 mb-6 max-w-md">
+              Since 2016, we've been transforming spaces into inspiring environments. Our mission is to enhance your
+              quality of life through exceptional design.
+            </p>
+            <div className="space-y-2">
+              <div className="flex items-center gap-3">
+                <Mail className="w-4 h-4" />
+                <span className="text-sm">info@srkinteriordesigner.com</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="w-4 h-4" />
+                <span className="text-sm">+91 9819393613</span>
+              </div>
+            </div>
           </div>
-          <div className="flex gap-4">
-            <Link href="#" aria-label="Facebook" className="text-gray-500 hover:text-black">
-              <Facebook className="w-5 h-5" />
-            </Link>
-            <Link href="#" aria-label="Instagram" className="text-gray-500 hover:text-black">
-              <Instagram className="w-5 h-5" />
-            </Link>
-            <Link href="#" aria-label="LinkedIn" className="text-gray-500 hover:text-black">
-              <Linkedin className="w-5 h-5" />
-            </Link>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/about" className="text-background/80 hover:text-background transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="text-background/80 hover:text-background transition-colors">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/projects" className="text-background/80 hover:text-background transition-colors">
+                  Projects
+                </Link>
+              </li>
+              <li>
+                <Link href="/pricing" className="text-background/80 hover:text-background transition-colors">
+                  Pricing
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="font-semibold mb-4">Legal</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/terms" className="text-background/80 hover:text-background transition-colors">
+                  Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="text-background/80 hover:text-background transition-colors">
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-background/80 hover:text-background transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
-        <div className="mt-8 border-t border-gray-200 pt-8 text-center text-gray-500">
-          <p>Copyright &copy; {new Date().getFullYear()} SRK Interior Designer. All Rights Reserved.</p>
+
+        <div className="border-t border-background/20 mt-12 pt-8 text-center">
+          <p className="text-background/60 text-sm">© 2024 SRK Interior Designer. All rights reserved.</p>
         </div>
       </div>
     </footer>
