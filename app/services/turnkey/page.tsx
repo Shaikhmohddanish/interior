@@ -49,19 +49,19 @@ export default function TurnkeyPage() {
         "Living space optimization",
         "Custom storage solutions",
       ],
-      image: "/generated-residential-apartment-turnkey-project.png",
+      image: "/residential-apartment-turnkey-project.png",
     },
     {
       title: "Office Spaces",
       description: "Professional workspace design that enhances productivity and brand image.",
       features: ["Open office layouts", "Meeting room design", "Reception area styling", "Ergonomic workstations"],
-      image: "/generated-office-space-turnkey-interior-design.png",
+      image: "/office-space-turnkey-interior-project.png",
     },
     {
       title: "Commercial Spaces",
       description: "Retail and hospitality spaces designed to create memorable customer experiences.",
       features: ["Retail store design", "Restaurant interiors", "Hotel room styling", "Brand-focused aesthetics"],
-      image: "/generated-commercial-space-turnkey-interior-design.png",
+      image: "/commercial-space-turnkey-interior-design.png",
     },
   ]
 
@@ -95,7 +95,7 @@ export default function TurnkeyPage() {
             </div>
             <div>
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/turnkey-projects.jpg-cRhxA0FuGg33k8RtKx6XhDuC3W4l3D.jpeg"
+                src="/turnkey-project-management-interior-design.png"
                 alt="Turnkey project consultation with interior designers"
                 className="rounded-lg shadow-lg w-full h-auto"
               />
